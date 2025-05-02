@@ -1,0 +1,20 @@
+<div>
+  
+</div>
+
+<div>
+  <input
+    type="text"
+    [formControl]="searchUsersFormControl"
+    placeholder="Search users"
+  />
+  <button (click)="searchUsersFormControl.setValue('')">Clear</button>
+</div>
+
+<div *ngFor="let result of results$ | async">
+  <div>
+    <a [href]="result.html_url" target="_blank">{{
+      result.ecmSimpleFields[0].value
+    }}</a>
+  </div>
+</div>
